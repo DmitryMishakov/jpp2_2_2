@@ -3,7 +3,6 @@ package web.mydb;
 import org.springframework.stereotype.Component;
 import web.model.Car;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component

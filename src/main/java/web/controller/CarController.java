@@ -16,10 +16,6 @@ public class CarController {
 
     private final CarServices carServices;
 
-    private static Logger logger = LoggerFactory.getLogger(CarController.class);
-
-
-
     @Autowired
     public CarController(CarServices carServices) {
         this.carServices = carServices;
@@ -33,7 +29,7 @@ public class CarController {
     @GetMapping("/cars")
     public String  helloCars(@RequestParam(value = "count", required = false) Integer count,
                              Model model) {
-        carServices.getCountCars(count).forEach(x -> logger.info(x.toString()));
+        model.addAttribute("count_cars", carServices.getCountCars(count));
         return "cars";
     }
 }
