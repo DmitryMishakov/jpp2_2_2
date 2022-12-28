@@ -19,7 +19,7 @@ public class CarDaoImp implements CarDao{
 
     @Override
     public void saveCar(Car car) {
-        allCars.getMyCars().add(car);
+        allCars.saveCarInDB(car);
     }
 
     @Override
@@ -29,11 +29,11 @@ public class CarDaoImp implements CarDao{
 
     @Override
     public Car carById(int carId) {
-        return allCars.getMyCars().get(carId);
+        return allCars.getMyCarById(carId);
     }
 
     @Override
     public void deleteCarById(int carId) {
-        allCars.getMyCars().remove(carId);
+        allCars.removeMyCarById(carId);
     }
 }
