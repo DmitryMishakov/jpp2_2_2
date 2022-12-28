@@ -21,4 +21,16 @@ public class MyDB {
         return myCars;
     }
 
+    public void saveCarInDB(Car car) {
+        car.setId(++idDB);
+        myCars.add(car);
+    }
+
+    public Car getMyCarById(int carId) {
+        return myCars.get(carId);
+    }
+
+    public void removeMyCarById(int carId) {
+        myCars.remove(carId);
+    }
 }
